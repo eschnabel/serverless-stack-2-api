@@ -1,4 +1,4 @@
-import stripPackage from "stripe";
+import stripePackage from "stripe";
 import { calculateCost } from "./libs/billing-lib";
 import { success, failure } from "./libs/response-lib";
 
@@ -7,7 +7,7 @@ export async function main(event, context, callback) {
   const amount = calculateCost(storage);
   const description = "Scracth charge";
 
-  const string = stripePackage(process.env.stripeSecretKey);
+  const stripe = stripePackage(process.env.stripeSecretKey);
 
   try {
     await stripe.charges.create({
