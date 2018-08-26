@@ -13,6 +13,6 @@ Resources:
           KeyType: HASH
         - AttributeName: noteId
           KeyType: RANGE
-      ProvisionedThroughbut:
+      ProvisionedThroughput:
         ReadCapacityUnits: ${self:custom.tableThroughput}
         WriteCapacityUnits: ${self:custom.tableThroughput}
